@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
       res.json({
         products,
         status: 200,
-        message: "Product featch successfully!",
+        message: "Products fetch successfully!",
       });
     } catch (err) {
       res.json({
@@ -30,7 +30,7 @@ router.get("/:id", async (req, res) => {
     res.json({
       product,
       status: 200,
-      message: "Product featch successfully!",
+      message: "Product fetch successfully!",
     });
   } catch (err) {
     res.json({

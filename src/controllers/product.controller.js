@@ -26,6 +26,9 @@ exports.createProduct = async function (productObj) {
 
 exports.updateProduct = async function (id, productObj) {
   try {
+    if (!id) {
+      throw new Error('Incomplete arguments');
+    }
     let product = await Product.updateOne(
       {
         _id: id,

@@ -45,8 +45,8 @@ describe("Testing /product endpoint", () => {
     it("should succeed for all products", async () => {
       productController
         .fetchProducts()
-        .then((items) => {
-          expect(items).to.equal([sampleProductVal]);
+        .then((products) => {
+          expect(products).to.equal([sampleProductVal]);
         })
         .catch((err) => {
           throw new Error("Unexpected failure!");
@@ -63,15 +63,15 @@ describe("Testing /product endpoint", () => {
         })
         .catch((err) => {
           expect(result).to.be.instanceOf(Error);
-          expect(err.message).to.equal("Invalid item id");
+          expect(err.message).to.equal("Invalid product id");
         });
     });
 
     it("should return product when called with id", async () => {
       productController
         .fetchProduct("someRandomId")
-        .then((item) => {
-          expect(item).to.equal(sampleProductVal);
+        .then((product) => {
+          expect(product).to.equal(sampleProductVal);
         })
         .catch((err) => {
           throw new Error("Unexpected failure!");
@@ -96,8 +96,8 @@ describe("Testing /product endpoint", () => {
     it("should be updated when called with id", async () => {
       productController
         .updateProduct("someRandomId", sampleProductVal)
-        .then((item) => {
-          expect(item).to.equal(sampleProductVal);
+        .then((product) => {
+          expect(product).to.equal(sampleProductVal);
         })
         .catch((err) => {
           throw new Error("Unexpected failure!");

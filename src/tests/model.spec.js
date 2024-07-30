@@ -10,7 +10,7 @@ describe("Testing Product model", () => {
 
   beforeEach(() => {
     sampleProductVal = {
-      name: "sample item",
+      name: "sample product",
       price: "AAD",
       rating: "5",
     };
